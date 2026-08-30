@@ -15,16 +15,16 @@ function Keyboard() {
     })
 
     return (
-        <div>
-            {keys.map((key) => {
-                return (
-                    <div key={key.index}>
-                        {key.note} - {key.type}
-                    </div>
-                );
-            })}
+        <div className="keyboard">
+            {keys.map((key) => (
+                <div
+                    key={key.index}
+                    className={key.type === "white" ? "white-key" : "black-key"}
+                ></div>
+            ))}
         </div>
     );
+
 }
 
 export default Keyboard;
