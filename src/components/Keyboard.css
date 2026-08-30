@@ -9,7 +9,7 @@
     height: 200px;
     background: white;
     border: 1px solid #ccc;
-    position: relative
+    position: relative;
     z-index: 1;
 }
 
