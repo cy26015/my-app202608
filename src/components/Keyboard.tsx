@@ -1,3 +1,5 @@
+import "./Keyboard.css"
+
 function Keyboard() {
     const notes: string[] = [
         "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4",
