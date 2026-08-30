@@ -6,7 +6,6 @@ function Keyboard() {
 
     const keys = notes.map((note, index) => {
         const type = note.includes("#") ? "black" : "white";
-
         return {
             note: note,
             index: index,
@@ -20,6 +19,9 @@ function Keyboard() {
                 <div
                     key={key.index}
                     className={key.type === "white" ? "white-key" : "black-key"}
+                    style={
+                        key.type === "black" ? { left: `${key.index * 40 -12}px` } : {}
+                    }
                 ></div>
             ))}
         </div>
