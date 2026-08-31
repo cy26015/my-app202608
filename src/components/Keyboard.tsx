@@ -6,7 +6,7 @@ function Keyboard() {
         "C5", "C#5", "D5", "D#5", "E5", "F5", "F#5", "G5", "G#5", "A6", "A#6", "B5"
     ];
 
-    const blackKeyOffsets = {
+    const blackKeyOffsets: Record<string, number> = {
         "C#4":40 - 12,
         "D#4":40 * 2 - 10,
         "F#4":40 * 4 - 8,
@@ -16,7 +16,7 @@ function Keyboard() {
         "D#5":40 * 9 - 2,
         "F#5":40 * 11 + 1,
         "G#5":40 * 12 + 2,
-        "A#6":40 * 13 + 3,
+        "A#6":40 * 13 + 4,
     }
 
     const keys = notes.map((note, index) => {
