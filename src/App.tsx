@@ -1,11 +1,9 @@
-import Keyboard from  "./components/Keyboard"
+import HeaderQuiz from "./components/HeaderQuiz";
 
 function App() {
   return (
-    <div>
-      <Keyboard />
-    </div>
-  )
+    <HeaderQuiz />
+  );
 }
 
-export default App
+export default App;

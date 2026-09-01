@@ -1,4 +1,4 @@
-import "./Keyboard.css"
+import "./Keyboard.css";
 
 function Keyboard({ highlightKeys }: { highlightKeys: string[] }) {
     const notes: string[] = [
@@ -17,31 +17,32 @@ function Keyboard({ highlightKeys }: { highlightKeys: string[] }) {
         "F#5":40 * 11 + 1,
         "G#5":40 * 12 + 2,
         "A#6":40 * 13 + 4,
-    }
+    };
 
     const keys = notes.map((note, index) => {
         const type = note.includes("#") ? "black" : "white";
-        return {
-            note: note,
-            index: index,
-            type: type
-        };
-    })
+        return { note, index, type };
+    });
 
     return (
         <div className="keyboard">
             {keys.map((key) => (
                 <div
                     key={key.index}
-                    className={key.type === "white" ? "white-key" : "black-key"}
+                    className={
+                        highlightKeys.includes(key.note)
+                            ? `${key.type}-key highlight`
+                            : `${key.type}-key`
+                    }
                     style={
-                        key.type === "black" ? { left: `${blackKeyOffsets[key.note]}px` } : {}
+                        key.type === "black"
+                            ? { left: `${blackKeyOffsets[key.note]}px` }
+                            : {}
                     }
                 ></div>
             ))}
         </div>
     );
-
 }
 
 export default Keyboard;

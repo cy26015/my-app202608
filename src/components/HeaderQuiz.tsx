@@ -1,4 +1,5 @@
 import Keyboard from "./Keyboard";
+import { useState } from "react";
 
 /*
 "C4", "C#4", "D4", "D#4", "E4", "F4", "F#4", "G4", "G#4", "A5", "A#5", "B5",
@@ -14,15 +15,26 @@ const MajorTriads: Record<string,string[]> = {
     A: ["A5", "C#5", "E5"],
     B: ["B5", "D5", "F5"]
 };
+function getRandomRoot() {
+    const roots = ["C", "D", "E", "F", "G", "A", "B"]
+    const index = Math.floor(Math.random() * roots.length);
+    return roots[index];
+}
+
 
 function HeaderQuiz() {
-    const currentRoot = "C";
 
-    const highlightKeys = MajorTriad[currentRooot];
+    const [currentRoot, setCurrentRoot] = useState(getRandomRoot());
+
+    const highlightKeys = MajorTriads[currentRoot];
     
     return (
         <div>
             <Keyboard highlightKeys={highlightKeys} />
+
+            <button onClick={() => setCurrentRoot(getRandomRoot())}>
+                Next
+            </button>
         </div>
     );
 }
